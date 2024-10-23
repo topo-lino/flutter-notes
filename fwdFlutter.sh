@@ -4,6 +4,7 @@
 # if the script fails, run the commands manually (obviously)
 # plug your iphone into your mac via USB, turn off wifi on your phone, turn on internet sharing
 # set your proxy to 'invisible' mode
+# of course, don't forget to undo things when you are done
 
 echo "Enabling IP Forwarding"
 sudo sysctl -w net.inet.ip.forwarding=1
@@ -12,7 +13,7 @@ echo "Loading PF rules"
 sudo pfctl -F all
 sudo pfctl -d
 
-# load our rules
+# load our rules - original file is /etc/pf.conf
 sudo pfctl -f /path/to/rules/flutter.pf.conf
 sudo pfctl -e
 
